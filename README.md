@@ -2,7 +2,7 @@
  * @Description: 
  * @Author: rodchen
  * @Date: 2021-12-30 14:40:25
- * @LastEditTime: 2022-01-04 11:52:27
+ * @LastEditTime: 2022-01-04 14:14:15
  * @LastEditors: rodchen
 -->
 # react-adapt-scaffolding
@@ -16,11 +16,11 @@
 * html资源处理
 * 图片资源处理
 * 其他资源处理
+* devserver 配置
 * js 语法检查
 * js 语法兼容处理
 * css兼容压缩处理
 * html / js压缩
-* devserver 配置
 * 性能优化配置
 * 代码检查
 

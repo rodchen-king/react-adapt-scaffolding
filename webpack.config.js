@@ -2,12 +2,13 @@
  * @Description: 
  * @Author: rodchen
  * @Date: 2021-11-25 21:58:10
- * @LastEditTime: 2022-01-04 14:09:18
+ * @LastEditTime: 2022-01-04 14:22:06
  * @LastEditors: rodchen
  */
 
 const { resolve } = require('path');
 const htmlWebpackPlugin = require('html-webpack-plugin');
+
 module.exports = {
   entry: './src/js/index.js',
   output: {
@@ -58,5 +59,11 @@ module.exports = {
     })
   ],
   // mode 模式
-  mode: 'development'
+  mode: 'production',
+  devServer: {
+    contentBase: resolve(__dirname, 'build'),
+    compress: true,
+    port: 3000,
+    open: true
+  }
 }
