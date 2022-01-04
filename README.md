@@ -2,7 +2,7 @@
  * @Description: 
  * @Author: rodchen
  * @Date: 2021-12-30 14:40:25
- * @LastEditTime: 2022-01-04 11:48:44
+ * @LastEditTime: 2022-01-04 11:52:27
  * @LastEditors: rodchen
 -->
 # react-adapt-scaffolding
@@ -12,7 +12,8 @@
 
 ### webpack
 * css资源处理
-* less处理
+* less资源处理
+* html资源处理
 * 图片资源处理
 * 其他资源处理
 * js 语法检查

@@ -2,12 +2,12 @@
  * @Description: 
  * @Author: rodchen
  * @Date: 2021-11-25 21:58:10
- * @LastEditTime: 2022-01-04 11:50:20
+ * @LastEditTime: 2022-01-04 13:55:11
  * @LastEditors: rodchen
  */
 
 const { resolve } = require('path');
-
+const htmlWebpackPlugin = require('html-webpack-plugin');
 module.exports = {
   entry: './src/js/index.js',
   output: {
@@ -29,7 +29,9 @@ module.exports = {
   },
   // plugins
   plugins: [
-
+    new htmlWebpackPlugin({
+      template: './src/index.html' //复制文件，并且加上自动引入打包输出的所有资源
+    })
   ],
   // mode 模式
   mode: 'development'
