@@ -2,7 +2,7 @@
  * @Description: 
  * @Author: rodchen
  * @Date: 2022-01-04 14:32:16
- * @LastEditTime: 2022-01-04 14:52:41
+ * @LastEditTime: 2022-01-04 15:16:21
  * @LastEditors: rodchen
  */
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
@@ -19,7 +19,17 @@ module.exports = merge(commonConfig, {
         use: [ // use数组中的loader顺序是从右到左，从下到上的执行顺序
           MiniCssExtractPlugin.loader,
           'css-loader',  // 将css文件变成commonjs模块加载js中，里面内容是样式字符串，=
-          'less-loader'
+          {
+            loader: 'postcss-loader',
+            options: {
+              ident: 'postcss',
+              plugins: () => [
+                // post插件
+                require('postcss-preset-env')() // 帮postcss找到package.json中browserslist里面的配置，通过配置加载制定的css兼容性样式，默认是使用生产环境配置
+              ]
+            }
+          },
+          'less-loader',
         ]
       },
     ]
