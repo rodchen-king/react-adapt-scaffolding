@@ -2,7 +2,7 @@
  * @Description: 
  * @Author: rodchen
  * @Date: 2022-01-04 14:32:16
- * @LastEditTime: 2022-01-04 19:39:57
+ * @LastEditTime: 2022-01-04 20:17:42
  * @LastEditors: rodchen
  */
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
@@ -74,4 +74,5 @@ module.exports = merge(commonConfig, {
     }),
     new OptimizeCssAssetsWebpackPlugin(),
   ],
+  devtool: 'cheap-module-source-map',
 });

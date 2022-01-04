@@ -2,7 +2,7 @@
  * @Description: 
  * @Author: rodchen
  * @Date: 2022-01-04 14:32:16
- * @LastEditTime: 2022-01-04 19:48:02
+ * @LastEditTime: 2022-01-04 20:17:31
  * @LastEditors: rodchen
  */
 const { resolve } = require('path');
@@ -31,4 +31,5 @@ module.exports = merge(commonConfig, {
     open: true,
     hot: true,
   },
+  devtool: 'eval-source-map',
 });
