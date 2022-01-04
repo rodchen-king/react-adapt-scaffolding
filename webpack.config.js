@@ -2,7 +2,7 @@
  * @Description: 
  * @Author: rodchen
  * @Date: 2021-11-25 21:58:10
- * @LastEditTime: 2022-01-04 14:06:47
+ * @LastEditTime: 2022-01-04 14:09:18
  * @LastEditors: rodchen
  */
 
@@ -41,6 +41,13 @@ module.exports = {
       {
         test: /\.html$/,
         loader: 'html-loader'  // 处理html文件的img图片（负责引入img，从而能被url-loader进行处理）
+      },
+      {
+        exclude: /\.(less|css|js|html)/,
+        loader: 'file-loader',
+        options: {
+          name: '[hash:10].[ext]'
+        }
       }
     ]
   },
