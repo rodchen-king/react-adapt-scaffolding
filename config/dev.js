@@ -2,7 +2,7 @@
  * @Description: 
  * @Author: rodchen
  * @Date: 2022-01-04 14:32:16
- * @LastEditTime: 2022-01-04 17:51:36
+ * @LastEditTime: 2022-01-04 19:48:02
  * @LastEditors: rodchen
  */
 const { resolve } = require('path');
@@ -29,5 +29,6 @@ module.exports = merge(commonConfig, {
     compress: true,
     port: 3000,
     open: true,
+    hot: true,
   },
 });
