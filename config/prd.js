@@ -2,7 +2,7 @@
  * @Description: 
  * @Author: rodchen
  * @Date: 2022-01-04 14:32:16
- * @LastEditTime: 2022-01-04 19:33:58
+ * @LastEditTime: 2022-01-04 19:39:57
  * @LastEditors: rodchen
  */
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
@@ -20,7 +20,6 @@ module.exports = merge(commonConfig, {
         use: [ // use数组中的loader顺序是从右到左，从下到上的执行顺序
           MiniCssExtractPlugin.loader,
           'css-loader', // 将css文件变成commonjs模块加载js中，里面内容是样式字符串，=
-          'less-loader',
           {
             loader: 'postcss-loader',
             options: {
@@ -32,6 +31,7 @@ module.exports = merge(commonConfig, {
               ],
             },
           },
+          'less-loader',
         ],
       },
       {
