@@ -2,7 +2,7 @@
  * @Description: 
  * @Author: rodchen
  * @Date: 2022-01-04 14:32:16
- * @LastEditTime: 2022-01-04 17:53:19
+ * @LastEditTime: 2022-01-04 19:16:51
  * @LastEditors: rodchen
  */
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
@@ -32,6 +32,31 @@ module.exports = merge(commonConfig, {
           },
           'less-loader',
         ],
+      },
+      {
+        test: /\.js$/,
+        exclude: /(node_modules|build)/,
+        loader: 'babel-loader',
+        options: {
+          presets: [
+            [
+              '@babel/preset-env',
+              {
+                useBuiltIns: 'usage',
+                corejs: {
+                  version: 3,
+                },
+                targets: {
+                  chrome: '60',
+                  firefox: '60',
+                  ie: '9',
+                  safari: '10',
+                  edge: '17',
+                },
+              },
+            ],
+          ],
+        },
       },
     ],
   },

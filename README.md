@@ -2,7 +2,7 @@
  * @Description: 
  * @Author: rodchen
  * @Date: 2021-12-30 14:40:25
- * @LastEditTime: 2022-01-04 14:14:15
+ * @LastEditTime: 2022-01-04 18:01:02
  * @LastEditors: rodchen
 -->
 # react-adapt-scaffolding
@@ -33,5 +33,6 @@
 * 类ant design pro布局
 * 多页签
 * 高性能
+* css隔离方案处理
 
 ### 组件
