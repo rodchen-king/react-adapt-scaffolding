@@ -2,11 +2,12 @@
  * @Description: 
  * @Author: rodchen
  * @Date: 2022-01-04 14:32:16
- * @LastEditTime: 2022-01-04 19:16:51
+ * @LastEditTime: 2022-01-04 19:33:58
  * @LastEditors: rodchen
  */
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const OptimizeCssAssetsWebpackPlugin = require('optimize-css-assets-webpack-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { merge } = require('webpack-merge');
 const commonConfig = require('./common');
 
@@ -19,6 +20,7 @@ module.exports = merge(commonConfig, {
         use: [ // use数组中的loader顺序是从右到左，从下到上的执行顺序
           MiniCssExtractPlugin.loader,
           'css-loader', // 将css文件变成commonjs模块加载js中，里面内容是样式字符串，=
+          'less-loader',
           {
             loader: 'postcss-loader',
             options: {
@@ -30,7 +32,6 @@ module.exports = merge(commonConfig, {
               ],
             },
           },
-          'less-loader',
         ],
       },
       {
@@ -61,6 +62,13 @@ module.exports = merge(commonConfig, {
     ],
   },
   plugins: [
+    new HtmlWebpackPlugin({
+      template: './src/index.html', // 复制文件，并且加上自动引入打包输出的所有资源
+      minify: {
+        collapseWhitespace: true,
+        removeComments: true,
+      },
+    }),
     new MiniCssExtractPlugin({
       filename: 'css/built.css',
     }),
