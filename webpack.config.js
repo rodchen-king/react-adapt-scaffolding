@@ -2,7 +2,7 @@
  * @Description: 
  * @Author: rodchen
  * @Date: 2021-11-25 21:58:10
- * @LastEditTime: 2022-01-04 13:55:11
+ * @LastEditTime: 2022-01-04 14:06:47
  * @LastEditors: rodchen
  */
 
@@ -24,6 +24,23 @@ module.exports = {
           'css-loader',  // 将css文件变成commonjs模块加载js中，里面内容是样式字符串，=
           'less-loader'
         ]
+      },
+      {
+        test: /\.(jpg|png|gif)$/,
+        use: [
+          {
+            loader: 'url-loader',
+            options: {
+              limit: 8 * 1024, // 图片小于8kb，就会被base64处理。优点：减少请求数量（减轻服务器压力）。缺点：图片体积变大，文件请求数独更大
+              esModule: false, // url-loader默认使用es6模块化解析，而html-loader引入图片是commonjs格式，解析出问题，方法：关闭url-loader的es6模块化，使用commonjs解析
+              name: '[hash:10].[ext]' // ext取文件的原来扩展名,
+            }
+          }
+        ]
+      },
+      {
+        test: /\.html$/,
+        loader: 'html-loader'  // 处理html文件的img图片（负责引入img，从而能被url-loader进行处理）
       }
     ]
   },
