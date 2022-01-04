@@ -39,7 +39,8 @@
     "webpack-merge": "^5.8.0"
   },
   "dependencies": {
-    "html-webpack-plugin": "^4.4.1"
+    "html-webpack-plugin": "^4.4.1",
+    "optimize-css-assets-webpack-plugin": "^5.0.4"
   },
   "browserslist": {
     "development": [

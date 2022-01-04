@@ -2,10 +2,11 @@
  * @Description: 
  * @Author: rodchen
  * @Date: 2022-01-04 14:32:16
- * @LastEditTime: 2022-01-04 15:16:21
+ * @LastEditTime: 2022-01-04 17:40:11
  * @LastEditors: rodchen
  */
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const optimizeCssAssetsWebpackPlugin = require('optimize-css-assets-webpack-plugin')
 const { resolve } = require('path');
 const { merge } = require('webpack-merge');
 const commonConfig = require('./common')
@@ -37,6 +38,7 @@ module.exports = merge(commonConfig, {
   plugins: [
     new MiniCssExtractPlugin({
       filename: 'css/built.css'
-    })
+    }),
+    new optimizeCssAssetsWebpackPlugin()
   ]
 })
