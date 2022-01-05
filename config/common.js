@@ -2,7 +2,7 @@
  * @Description:
  * @Author: rodchen
  * @Date: 2021-11-25 21:58:10
- * @LastEditTime: 2022-01-04 19:38:08
+ * @LastEditTime: 2022-01-04 21:33:20
  * @LastEditors: rodchen
  */
 
@@ -51,6 +51,13 @@ module.exports = {
           name: '[hash:10].[ext]',
         },
       },
+      {
+        test: /\.jsx?$/, // jsx/js文件的正则
+        exclude: /node_modules/, // 排除 node_modules 文件夹
+        use: {
+          loader: 'babel-loader',
+        }
+    }
     ],
   },
   // plugins

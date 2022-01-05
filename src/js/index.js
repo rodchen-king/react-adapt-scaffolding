@@ -1,26 +1,15 @@
 /*
- * @Description:
+ * @Description: 
  * @Author: rodchen
  * @Date: 2022-01-04 11:08:33
- * @LastEditTime: 2022-01-04 20:12:30
+ * @LastEditTime: 2022-01-05 09:48:05
  * @LastEditors: rodchen
  */
-import print from './print';
+import React from 'react';
+import ReactDom from 'react-dom';
 
-import '../css/a.less';
-import '../css/b.less';
+ReactDom.render(
+  <div>hello4w</div>,
+  document.getElementById('root')
+)
 
-function index() {
-
-}
-
-print();
-
-if (module.hot) {
-  module.hot.accept('./print.js', () => {
-    // 方法会监听js文件的变化，
-    print();
-  });
-}
-
-export default index;

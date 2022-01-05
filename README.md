@@ -2,7 +2,7 @@
  * @Description: 
  * @Author: rodchen
  * @Date: 2021-12-30 14:40:25
- * @LastEditTime: 2022-01-04 20:24:16
+ * @LastEditTime: 2022-01-04 20:27:55
  * @LastEditors: rodchen
 -->
 # react-adapt-scaffolding
@@ -33,6 +33,8 @@
 * 性能优化配置
 
 ### 系统
+* react
+* react-hot-loader
 * react-router
 * redux
 * hooks
