@@ -2,7 +2,7 @@
  * @Description:
  * @Author: rodchen
  * @Date: 2021-11-25 21:58:10
- * @LastEditTime: 2022-01-04 21:33:20
+ * @LastEditTime: 2022-01-05 10:12:25
  * @LastEditors: rodchen
  */
 
@@ -11,7 +11,7 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
-  entry: './src/js/index.js',
+  entry: './src/index.js',
   output: {
     filename: 'built.js',
     path: resolve(__dirname, '../build'), // __dirname代表当前文件的目录绝对路径，nodejs的变量
